@@ -2,6 +2,7 @@ import { Footer } from '../../layout/Footer'
 import { BackgroundBlurs } from './components/BackgroundBlurs'
 import { LoginForm } from './LoginForm'
 import styles from './LoginPage.module.css'
+import cover from './assets/cover-login.png'
 
 export const LoginPage = () => {
   return (
@@ -9,7 +10,7 @@ export const LoginPage = () => {
       <div className={styles['login-page__container']}>
         <div className={styles['login-page__hero']}>
           <img
-            src='/src/features/login/assets/portada-login.png'
+            src={cover}
             alt='background'
             className={styles['login-page__image']}
           />
@@ -28,7 +29,7 @@ export const LoginPage = () => {
                 </h1>
               </div>
               <img
-                src='/src/features/login/assets/portada-login.png'
+                src={cover}
                 alt='background'
                 className={styles['login-page__hero-mobile']}
               />

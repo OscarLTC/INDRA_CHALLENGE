@@ -34,11 +34,11 @@ export const PlanOption = ({ onSelect, selected, option }: Props) => {
       </div>
 
       <div className='flex flex-col gap-2 sm:gap-4  text-[#141938] sm:w-64'>
-        <div className='flex flex-row sm:flex-col items-center gap-4'>
+        <div className='flex flex-row sm:flex-col self-start items-center gap-4'>
           <img
             src={option.imgSrc}
             alt={option.title}
-            className='w-12 h-12 object-cover'
+            className='w-12 h-12 object-cover self-start'
           />
           <h2 className=' font-bold text-2xl leading-8'>{option.title}</h2>
         </div>

@@ -46,7 +46,7 @@ export const PlanCard = ({ plan }: Props) => {
       </ul>
       <Button
         unstyled
-        className='bg-[#FF1C44] w-full px-8 py-4 text-white rounded-full mt-auto'
+        className='bg-[#FF1C44] w-full px-8 py-4 text-white rounded-full mt-auto cursor-pointer'
       >
         <span className='text-lg font-bold leading-5'>Seleccionar Plan</span>
       </Button>

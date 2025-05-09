@@ -1,2 +1,2 @@
-export * from './BackgroundBlurs'
-export * from './LoginForm'
+export * from './BackgroundBlurs/BackgroundBlurs'
+export * from './LoginForm/LoginForm'

@@ -1,6 +1,6 @@
-import type { Plan } from '../types/plan'
-import planHouse from '../assets/plan-house.svg'
-import planHospital from '../assets/plan-hospital.svg'
+import type { Plan } from '../../types/plan'
+import planHouse from '../../assets/plan-house.svg'
+import planHospital from '../../assets/plan-hospital.svg'
 import { Button } from 'primereact/button'
 import styles from './PlanCard.module.css'
 

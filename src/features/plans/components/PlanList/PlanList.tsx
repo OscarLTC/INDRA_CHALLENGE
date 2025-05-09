@@ -1,5 +1,5 @@
-import type { Plan } from '../types/plan'
-import { PlanCard } from './PlanCard'
+import type { Plan } from '../../types/plan'
+import { PlanCard } from '../PlanCard/PlanCard'
 import styles from './PlanList.module.css'
 
 interface Props {

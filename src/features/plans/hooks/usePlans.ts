@@ -19,7 +19,11 @@ export const usePlans = () => {
 
   useEffect(() => {
     if (summary) fetchAllPlans()
-  }, [fetchAllPlans, summary])
+
+    return () => {
+      setType(null)
+    }
+  }, [fetchAllPlans, setType, summary])
 
   useEffect(() => {
     if (selectedPlan) {

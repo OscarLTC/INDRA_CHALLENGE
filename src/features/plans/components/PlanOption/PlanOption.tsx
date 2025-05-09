@@ -2,7 +2,7 @@ import { Button } from 'primereact/button'
 import { LuCheck } from 'react-icons/lu'
 import styles from './PlanOption.module.css'
 
-export type PlanType = 'me' | 'someone'
+export type PlanType = 'me' | 'someone' | null
 
 type Option = {
   type: PlanType

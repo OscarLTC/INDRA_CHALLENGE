@@ -1,7 +1,7 @@
 import { z } from 'zod'
 
 export const loginSchema = z.object({
-  docType: z.enum(['dni', 'ce', 'passport']),
+  docType: z.enum(['dni', 'carne']),
   docNumber: z.string().min(8, 'Mínimo 8 dígitos'),
   phone: z
     .string()

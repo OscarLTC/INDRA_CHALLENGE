@@ -1,19 +1,25 @@
 import type { Plan } from '../types/plan'
-import plnaHouse from '../assets/plan-house.svg'
+import planHouse from '../assets/plan-house.svg'
+import planHospital from '../assets/plan-hospital.svg'
 import { Button } from 'primereact/button'
 import styles from './PlanCard.module.css'
 
 interface Props {
   plan: Plan
+  onSelect?: () => void
 }
 
 export const PlanCard = ({ plan }: Props) => {
+  const isClinic = plan.name.includes('Clínica')
+  const recommended = isClinic || Boolean(plan.recommended)
+  const iconSrc = isClinic ? planHospital : planHouse
+
   return (
     <div className={styles['plan-card']}>
       <div className={styles['plan-card__header']}>
         <div
           className={`${styles['plan-card__badge']} ${
-            plan.recommended ? '' : styles['plan-card__badge--hidden']
+            recommended ? '' : styles['plan-card__badge--hidden']
           }`}
         >
           <span className={styles['plan-card__badge--label']}>
@@ -38,7 +44,7 @@ export const PlanCard = ({ plan }: Props) => {
             </div>
           </div>
           <img
-            src={plnaHouse}
+            src={iconSrc}
             alt='Icono'
             className={styles['plan-card__icon']}
           />

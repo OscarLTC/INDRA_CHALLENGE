@@ -1,0 +1,12 @@
+@reference "tailwindcss";
+
+.footer {
+  @apply bg-[#03050F] flex flex-col sm:flex-row w-full justify-between items-center px-6 sm:px-[120px] py-8 sm:py-6 z-20 sticky sm:static bottom-0 mt-auto  sm:bottom-auto left-0 sm:left-auto;
+}
+.footer__inner {
+  @apply pb-6 sm:pb-0 w-full sm:w-fit flex justify-center sm:justify-start border-b sm:border-0 border-[#2B304E];
+}
+
+.footer__text {
+  @apply text-xs sm:text-sm leading-5 sm:leading-4 text-white pt-6 sm:pt-0;
+}

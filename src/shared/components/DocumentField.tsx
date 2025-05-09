@@ -20,7 +20,7 @@ export const DocumentField = ({
   onNumberChange,
 }: Props) => {
   return (
-    <div className='p-inputgroup border border-[#5E6488] divide-x divide-[#5E6488] rounded-lg'>
+    <div className='p-inputgroup border border-[#5E6488] divide-x divide-[#5E6488] rounded-lg z-20'>
       <Dropdown
         value={type}
         options={docTypes}

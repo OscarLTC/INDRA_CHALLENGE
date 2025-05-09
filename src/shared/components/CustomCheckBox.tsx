@@ -11,14 +11,18 @@ export const CustomCheckBox = ({ label }: Props) => {
   const [selectedOption, setSelectedOption] = useState(false)
 
   return (
-    <div className='flex gap-3 items-center'>
+    <div className='flex gap-3 items-center z-20'>
       <Checkbox
         checked={selectedOption}
         inputId='privacy'
         onChange={(e) => setSelectedOption(e.checked!)}
         icon={<FaCheck className='text-white' />}
+        className='justify-center items-center '
       />
-      <label htmlFor='privacy' className='text-xs leading-5 tracking-[0.1px]'>
+      <label
+        htmlFor='privacy'
+        className='text-sm sm:text-xs leading-6 sm:leading-5 tracking-wide'
+      >
         {label}
       </label>
     </div>

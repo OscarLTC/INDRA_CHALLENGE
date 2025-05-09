@@ -1,0 +1,53 @@
+@reference "tailwindcss";
+
+.login-page {
+  @apply flex flex-col w-screen h-screen relative;
+}
+
+.login-page__container {
+  @apply flex w-full justify-center max-w-[90rem] sm:m-auto px-6 md:px-0;
+}
+
+.login-page__hero {
+  @apply max-w-[480px] hidden sm:block;
+}
+
+.login-page__image {
+  @apply object-cover rounded-3xl z-20;
+}
+
+.login-page__content{
+  @apply flex flex-col gap-6 md:max-w-[352px] md:ml-32;
+}
+
+.login-page__section{
+  @apply flex flex-col gap-4;
+}
+
+.login-page__header{
+  @apply flex justify-between items-center sm:gap-4 pb-5 sm:pb-0 border-b sm:border-none border-[#CCD1EE];
+}
+.login-page__header-content{
+  @apply flex flex-col gap-4 max-w-[180px] sm:max-w-none
+}
+
+.login-page__badge {
+  @apply w-fit bg-gradient-to-r from-[#00F4E2] to-[#00FF7F] rounded-sm px-2 py-0.5 sm:py-1 flex;
+}
+
+.login-page__badge-text {
+  @apply font-bold text-xs sm:text-sm leading-4 tracking-wider;
+}
+
+.login-page__title {
+  @apply font-bold text-2xl sm:text-3xl leading-9 sm:leading-10
+}
+
+.login-page__hero-mobile{
+  @apply object-cover rounded-3xl z-20 sm:hidden w-[136px]
+}
+
+.login-page__subtitle{
+  @apply font-semibold text-sm leading-5 tracking-wide pt-2 text-[#03050F];
+}
+

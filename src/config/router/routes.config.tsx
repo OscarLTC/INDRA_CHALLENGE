@@ -1,6 +1,6 @@
 import type { RouteObject } from 'react-router'
 import { Layout } from '../../layout/Layout'
-import { LoginPage } from '../../pages/LoginPage'
+import { LoginPage } from '../../features/login/LoginPage'
 
 export const routes: RouteObject[] = [
   {

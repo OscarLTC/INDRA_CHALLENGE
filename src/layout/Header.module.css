@@ -1,0 +1,17 @@
+@reference "tailwindcss";
+
+.header {
+  @apply flex justify-between items-center w-full px-6 sm:px-[120px] py-3 sm:py-0.5 bg-transparent
+}
+
+.nav {
+  @apply flex gap-4 items-center py-5
+}
+
+.nav__badge {
+  @apply hidden sm:block font-semibold text-xs leading-4 tracking-wide;
+}
+
+.nav__link {
+  @apply flex items-center gap-2 text-lg font-bold leading-5 tracking-wider;
+}

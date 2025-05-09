@@ -1,0 +1,17 @@
+@reference "tailwindcss";
+
+.checkbox-field__wrapper {
+  @apply flex gap-3 items-center z-20;
+}
+
+.checkbox-field__checkbox {
+  @apply justify-center items-center;
+}
+
+.checkbox-field__icon {
+  @apply text-white;
+}
+
+.checkbox-field__label {
+  @apply text-sm sm:text-xs leading-6 sm:leading-5 tracking-wide;
+}

@@ -1,0 +1,13 @@
+@reference "tailwindcss";
+
+.document-field {
+  @apply  border border-[#5E6488] divide-x divide-[#5E6488] rounded-lg z-20
+}
+
+.document-field__dropdown {
+  @apply max-w-[140px] p-4 ring-0 outline-none bg-transparent;
+}
+
+.document-field__input {
+  @apply flex-1 p-4 ring-0 outline-none;
+}

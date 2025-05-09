@@ -7,6 +7,7 @@ import { PlanOption, type PlanType } from './components/PlanOption'
 import planMe from './assets/plan-me.svg'
 import planSomeone from './assets/plan-someone.svg'
 import { PlanList } from './components/PlanList'
+import styles from './PlansPage.module.css'
 
 type Option = {
   type: PlanType
@@ -44,21 +45,21 @@ export const PlansPage = () => {
   const onGoBack = () => navigate(-1)
 
   return (
-    <div className='flex flex-col mt-6 sm:mt-16  gap-10 h-full px-6 sm:px-0 relative bg-[#F8F9FF]'>
-      <Button
-        onClick={onGoBack}
-        className='text-[#4F4FFF] absolute top-10 -left-40 flex gap-2 items-center rounded-full px-2 hover:bg-[#4F4FFF12] outline-none ring-0 '
-      >
-        <LuCircleArrowLeft className='w-5 h-5' />
-        <span className='text-lg font-bold'>Volver</span>
+    <div className={styles['plans-page']}>
+      <Button onClick={onGoBack} className={styles['plans-page__back-button']}>
+        <LuCircleArrowLeft className={styles['plans-page__back-button-icon']} />
+        <span className={styles['plans-page__back-button-text']}>Volver</span>
       </Button>
-      <section className='flex flex-col gap-2 mx-auto max-w-[560px] sm:text-center text-[#141938] '>
-        <h1 className=' font-bold text-3xl sm:text-[40px] leading-9 sm:leading-12'>{`${summary?.name} ¿Para quién deseas cotizar?`}</h1>
-        <p className='leading-7 tracking-wide'>
+
+      <section className={styles['plans-page__intro']}>
+        <h1 className={styles['plans-page__intro-title']}>
+          {`${summary?.name} ¿Para quién deseas cotizar?`}
+        </h1>
+        <p className={styles['plans-page__intro-text']}>
           Selecciona la opción que se ajuste más a tus necesidades.
         </p>
       </section>
-      <section className='flex flex-col sm:flex-row justify-center gap-6 sm:gap-8'>
+      <section className={styles['plans-page__options']}>
         {OPTIONS.map((option) => (
           <PlanOption
             key={option.type}

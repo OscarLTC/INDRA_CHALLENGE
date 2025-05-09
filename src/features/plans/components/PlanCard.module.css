@@ -1,0 +1,69 @@
+@reference "tailwindcss";
+
+.plan-card {
+  @apply px-8 py-10 h-full max-w-2xs sm:max-w-none gap-6 bg-white rounded-3xl shadow-2xl shadow-[#AEACF3]/100 backdrop-blur-2xl flex flex-col;
+}
+
+.plan-card__header {
+  @apply flex flex-col gap-2;
+}
+
+.plan-card__badge {
+  @apply bg-[#7DF0BA] w-fit rounded-md flex py-0.5 px-2 text-[#141938];
+}
+
+.plan-card__badge--hidden {
+  @apply invisible;
+}
+
+.plan-card__badge--label {
+  @apply text-xs font-black leading-4;
+}
+
+.plan-card__info {
+  @apply flex gap-4 text-[#141938] pb-6 border-b border-[#D7DBF5];
+}
+
+.plan-card__details {
+  @apply flex flex-col gap-6;
+}
+
+.plan-card__name {
+  @apply font-black text-2xl leading-8;
+}
+
+.plan-card__pricing {
+  @apply flex flex-col text-[#7981B2];
+}
+
+.plan-card__pricing-label {
+  @apply text-xs font-black leading-4 uppercase;
+}
+
+.plan-card__old-price {
+  @apply text-sm leading-8 line-through;
+}
+
+.plan-card__current-price {
+  @apply text-[#141938] text-xl font-black leading-7;
+}
+
+.plan-card__icon {
+  @apply w-14 h-14 flex;
+}
+
+.plan-card__features {
+  @apply list-disc list-outside pl-5 flex flex-col gap-6 text-[#141938];
+}
+
+.plan-card__feature-item {
+  @apply leading-7;
+}
+
+.plan-card__button {
+  @apply bg-[#FF1C44] w-full px-8 py-4 text-white rounded-full mt-auto cursor-pointer;
+}
+
+.plan-card__button-text {
+  @apply text-lg font-bold leading-5;
+}

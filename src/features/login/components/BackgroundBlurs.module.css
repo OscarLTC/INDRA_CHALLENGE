@@ -1,0 +1,17 @@
+@reference "tailwindcss";
+
+.blur__purple {
+  @apply hidden sm:block absolute -top-10 left-0 w-[400px] h-full bg-cover z-10;
+}
+
+.blur__purple-mobile {
+  @apply block sm:hidden absolute -top-0 -left-10 w-[400px] h-full bg-cover z-10;
+}
+
+.blur__cyan {
+  @apply hidden sm:block absolute -top-20 right-0 w-[400px] h-full bg-cover z-10;
+}
+
+.blur__cyan-mobile {
+  @apply block sm:hidden absolute -top-21 right-0 w-[600px] h-full bg-cover z-10;
+}

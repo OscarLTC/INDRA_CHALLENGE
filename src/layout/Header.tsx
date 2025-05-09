@@ -13,7 +13,7 @@ export const Header = () => {
           aria-label='Llama al (01) 411 6001'
           className={styles['nav__link']}
         >
-          <FaPhone className='w-5 h-5' />
+          <FaPhone className={styles['nax__icon']} />
           (01) 411 6001
         </a>
       </nav>

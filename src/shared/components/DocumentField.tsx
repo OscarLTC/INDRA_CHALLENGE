@@ -1,5 +1,6 @@
 import { Dropdown } from 'primereact/dropdown'
 import { InputText } from 'primereact/inputtext'
+import styles from './DocumentField.module.css'
 
 const docTypes = [
   { label: 'DNI', value: 'dni' },
@@ -20,19 +21,19 @@ export const DocumentField = ({
   onNumberChange,
 }: Props) => {
   return (
-    <div className='p-inputgroup border border-[#5E6488] divide-x divide-[#5E6488] rounded-lg z-20'>
+    <div className={'p-inputgroup ' + styles['document-field']}>
       <Dropdown
         value={type}
         options={docTypes}
         onChange={(e) => onTypeChange(e.value)}
-        className='max-w-[140px] p-4 ring-0 outline-none'
+        className={styles['document-field__dropdown']}
         placeholder='Tipo'
       />
       <InputText
         value={number}
         onChange={(e) => onNumberChange(e.target.value)}
         placeholder='N° de documento'
-        className='flex-1 p-4 ring-0 outline-none'
+        className={styles['document-field__input']}
       />
     </div>
   )

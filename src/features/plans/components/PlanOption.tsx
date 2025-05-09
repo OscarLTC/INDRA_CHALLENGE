@@ -1,5 +1,6 @@
 import { Button } from 'primereact/button'
 import { LuCheck } from 'react-icons/lu'
+import styles from './PlanOption.module.css'
 
 export type PlanType = 'me' | 'someone'
 
@@ -21,28 +22,34 @@ export const PlanOption = ({ onSelect, selected, option }: Props) => {
     <Button
       unstyled
       onClick={() => onSelect(option.type)}
-      className={`relative cursor-pointer px-6 py-10 bg-white border-3 rounded-3xl shadow-2xl/100 shadow-[#AEACF3] backdrop-blur-2xl flex items-center ${selected ? 'border-[#141938]' : 'border-transparent'}`}
+      className={
+        `${styles['plan-option__button']} ` +
+        (selected
+          ? styles['plan-option__button--selected']
+          : styles['plan-option__button--unselected'])
+      }
     >
       <div
-        className={`absolute top-4 right-4 w-6 h-6 rounded-full border  flex items-center justify-center ${
-          selected
-            ? 'border-transparent bg-[#389E0D]'
-            : 'border-[#A9AFD9] bg-transparent'
-        }`}
+        className={
+          `${styles['plan-option__indicator']} ` +
+          (selected
+            ? styles['plan-option__indicator--selected']
+            : styles['plan-option__indicator--unselected'])
+        }
       >
-        <LuCheck className={`text-white ${selected ? 'block ' : 'hidden'}`} />
+        <LuCheck className={styles['plan-option__icon']} />
       </div>
 
-      <div className='flex flex-col gap-2 sm:gap-4  text-[#141938] sm:w-64'>
-        <div className='flex flex-row sm:flex-col self-start items-center gap-4'>
+      <div className={styles['plan-option__content']}>
+        <div className={styles['plan-option__header']}>
           <img
             src={option.imgSrc}
             alt={option.title}
-            className='w-12 h-12 object-cover self-start'
+            className={styles['plan-option__image']}
           />
-          <h2 className=' font-bold text-2xl leading-8'>{option.title}</h2>
+          <h2 className={styles['plan-option__title']}>{option.title}</h2>
         </div>
-        <p className='text-xs leading-5 tracking-wider text-start'>
+        <p className={styles['plan-option__description']}>
           {option.description}
         </p>
       </div>

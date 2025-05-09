@@ -1,0 +1,49 @@
+@reference "tailwindcss";
+
+.plan-option__button {
+  @apply relative cursor-pointer px-6 py-10 bg-white border-3 rounded-3xl shadow-2xl shadow-[#AEACF3]/100 backdrop-blur-2xl flex items-center;
+}
+
+.plan-option__button--selected {
+  @apply border-[#141938];
+}
+
+.plan-option__button--unselected {
+  @apply border-transparent;
+}
+
+.plan-option__indicator {
+  @apply absolute top-4 right-4 w-6 h-6 rounded-full border flex items-center justify-center;
+}
+
+.plan-option__indicator--selected {
+  @apply border-transparent bg-[#389E0D];
+}
+
+.plan-option__indicator--unselected {
+  @apply border-[#A9AFD9] bg-transparent;
+}
+
+.plan-option__icon {
+  @apply text-white;
+}
+
+.plan-option__content {
+  @apply flex flex-col gap-2 sm:gap-4 text-[#141938] sm:w-64;
+}
+
+.plan-option__header {
+  @apply flex flex-row sm:flex-col self-start items-center gap-4;
+}
+
+.plan-option__image {
+  @apply w-12 h-12 object-cover self-start;
+}
+
+.plan-option__title {
+  @apply font-bold text-2xl leading-8;
+}
+
+.plan-option__description {
+  @apply text-xs leading-5 tracking-wider text-start;
+}

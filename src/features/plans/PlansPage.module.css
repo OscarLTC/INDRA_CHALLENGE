@@ -1,0 +1,34 @@
+@reference "tailwindcss";
+
+.plans-page {
+  @apply flex flex-col mt-6 sm:mt-16 gap-10 h-full px-6 sm:px-0 relative bg-[#F8F9FF];
+}
+
+.plans-page__back-button {
+  @apply text-[#4F4FFF] absolute top-0 left-40 sm:flex gap-2 items-center rounded-full px-2 hover:bg-[#4F4FFF12] hidden;
+}
+
+.plans-page__back-button-icon {
+  @apply w-5 h-5;
+}
+
+.plans-page__back-button-text {
+  @apply text-lg font-bold;
+}
+
+.plans-page__intro {
+  @apply flex flex-col gap-2 mx-auto max-w-[560px] sm:text-center text-[#141938];
+}
+
+.plans-page__intro-title {
+  @apply font-bold text-3xl sm:text-[40px] leading-9 sm:leading-12;
+}
+
+.plans-page__intro-text {
+  @apply leading-7 tracking-wide;
+}
+
+.plans-page__options {
+  @apply flex flex-col sm:flex-row justify-center gap-6 sm:gap-8;
+}
+

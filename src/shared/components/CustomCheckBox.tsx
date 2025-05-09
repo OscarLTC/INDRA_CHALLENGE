@@ -1,6 +1,6 @@
 import { Checkbox, type CheckboxChangeEvent } from 'primereact/checkbox'
 import { FaCheck } from 'react-icons/fa6'
-
+import styles from './CustomCheckBox.module.css'
 interface Props {
   label: string
   checked: boolean
@@ -9,18 +9,15 @@ interface Props {
 
 export const CustomCheckBox = ({ label, checked, onChange }: Props) => {
   return (
-    <div className='flex gap-3 items-center z-20'>
+    <div className={styles['checkbox-field__wrapper']}>
       <Checkbox
         checked={checked}
         inputId={label}
         onChange={onChange}
-        icon={<FaCheck className='text-white' />}
-        className='justify-center items-center '
+        icon={<FaCheck className={styles['checkbox-field__icon']} />}
+        className={styles['checkbox-field__checkbox']}
       />
-      <label
-        htmlFor={label}
-        className='text-sm sm:text-xs leading-6 sm:leading-5 tracking-wide'
-      >
+      <label htmlFor={label} className={styles['checkbox-field__label']}>
         {label}
       </label>
     </div>

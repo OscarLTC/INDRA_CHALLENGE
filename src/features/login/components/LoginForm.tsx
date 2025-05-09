@@ -100,7 +100,9 @@ export const LoginForm = () => {
         type='submit'
         disabled={isSubmitting || loadingUser}
         className={styles['login-form__button']}
-        loadingIcon={<LuLoaderCircle className='animate-spin' />}
+        loadingIcon={
+          <LuLoaderCircle className={styles['login-form__button-icon']} />
+        }
       >
         Cotiza aquí
       </Button>

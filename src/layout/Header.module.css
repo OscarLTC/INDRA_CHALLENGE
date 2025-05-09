@@ -15,3 +15,7 @@
 .nav__link {
   @apply flex items-center gap-2 text-lg font-bold leading-5 tracking-wider;
 }
+
+.nax__icon {
+  @apply w-5 h-5;
+}

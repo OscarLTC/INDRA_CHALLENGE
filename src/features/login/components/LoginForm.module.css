@@ -12,6 +12,10 @@
   @apply text-sm font-semibold;
 }
 
+.login-controller {
+  @apply flex flex-col;
+}
+
 .login-form__input {
   @apply border border-[#5E6488] rounded-lg p-4 ring-0 outline-none z-20 ;
 }
@@ -30,4 +34,8 @@
 
 .login-form__button {
   @apply bg-[#03050F] flex gap-2 justify-center text-white sm:w-fit font-bold text-xl leading-6 tracking-[0.4px] px-10 py-5 rounded-4xl ring-0 outline-none;
+}
+
+.login-form__button-icon {
+  @apply 'animate-spin';
 }

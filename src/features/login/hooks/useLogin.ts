@@ -53,7 +53,7 @@ export const useLogin = () => {
       }
       setSummary(summary)
 
-      navigate('/summary')
+      navigate('/plans')
     } catch (err) {
       console.error('Error fetching user:', err)
     } finally {

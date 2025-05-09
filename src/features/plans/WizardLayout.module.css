@@ -1,0 +1,14 @@
+@reference "tailwindcss";
+
+.container {
+  @apply h-full flex flex-col ;
+  font-family: 'Lato', sans-serif;
+}
+
+.header {
+  @apply flex items-center justify-between gap-4 border-b border-[#D7DBF5] sm:border-b-0 px-6 sm:p-0 py-4 sm:py-0;
+}
+
+.backButton {
+  @apply outline-none ring-0 flex justify-start sm:hidden items-center;
+}

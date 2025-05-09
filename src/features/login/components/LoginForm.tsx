@@ -11,9 +11,6 @@ export const LoginForm = () => {
   const { control, register, handleSubmit, errors, isSubmitting, loadingUser } =
     useLogin()
 
-  console.log(isSubmitting, 'isSubmitting')
-  console.log(loadingUser, 'loadingUser')
-
   return (
     <form onSubmit={handleSubmit} className={styles['login-form']} noValidate>
       <div className={styles['login-form__group']}>

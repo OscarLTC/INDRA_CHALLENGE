@@ -1,0 +1,46 @@
+@reference "tailwindcss";
+
+.steps {
+  @apply sm:bg-[#EDEFFC] w-full flex items-center justify-center py-4 gap-4;
+}
+
+.steps__mobile{
+  @apply flex items-center w-full gap-4 text-[#141938] sm:hidden
+}
+
+.steps__mobile-label {
+  @apply text-[10px] font-black min-w-fit leading-4 tracking-wider
+}
+
+.steps__mobile-bar {
+  @apply h-2 w-full;
+}
+
+
+.step {
+  @apply sm:flex items-center gap-4 text-[#7981B2]  hidden;
+}
+.step--active {
+  @apply sm:flex items-center gap-4 text-[#141938] hidden;
+}
+.separator {
+  @apply sm:flex text-[#4F4FFF] hidden;
+}
+
+.step__dot {
+  @apply rounded-full flex items-center justify-center w-6 h-6 border border-[#A9AFD9] bg-transparent;
+}
+.step--active .step__dot {
+  @apply bg-[#4F4FFF] border-transparent;
+}
+/* Número dentro del punto */
+.step__number {
+  @apply text-xs text-[#A9AFD9];
+}
+.step--active .step__number {
+  @apply text-white;
+}
+/* Label de cada paso */
+.step__label {
+  @apply font-bold leading-6 tracking-wide;
+}

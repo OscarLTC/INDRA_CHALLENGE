@@ -1,13 +1,12 @@
-import { useLoginStore } from '../login/store/loginStore'
+import { useLoginStore } from '../../login/store/loginStore'
 import { useState } from 'react'
 import { LuCircleArrowLeft } from 'react-icons/lu'
 import { Button } from 'primereact/button'
 import { useNavigate } from 'react-router'
-import { PlanOption, type PlanType } from './components/PlanOption'
-import planMe from './assets/plan-me.svg'
-import planSomeone from './assets/plan-someone.svg'
-import { PlanList } from './components/PlanList'
+import planMe from '../assets/plan-me.svg'
+import planSomeone from '../assets/plan-someone.svg'
 import styles from './PlansPage.module.css'
+import { PlanList, PlanOption, type PlanType } from '../components'
 
 type Option = {
   type: PlanType

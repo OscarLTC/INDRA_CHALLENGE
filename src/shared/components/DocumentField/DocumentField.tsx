@@ -1,11 +1,7 @@
 import { Dropdown } from 'primereact/dropdown'
 import { InputText } from 'primereact/inputtext'
 import styles from './DocumentField.module.css'
-
-const docTypes = [
-  { label: 'DNI', value: 'dni' },
-  { label: 'CE', value: 'carne' },
-]
+import { docTypes } from '../../constants'
 
 interface Props {
   type: string

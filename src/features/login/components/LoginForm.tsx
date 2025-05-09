@@ -1,11 +1,10 @@
 import { InputText } from 'primereact/inputtext'
-import { DocumentField } from '../../../shared/components/DocumentField'
-import { CustomCheckBox } from '../../../shared/components/CustomCheckBox'
 import { Button } from 'primereact/button'
 import styles from './LoginForm.module.css'
 import { useLogin } from '../hooks/useLogin'
 import { Controller } from 'react-hook-form'
 import { LuLoaderCircle } from 'react-icons/lu'
+import { CustomCheckBox, DocumentField } from '../../../shared/components'
 
 export const LoginForm = () => {
   const { control, register, handleSubmit, errors, isSubmitting, loadingUser } =
@@ -100,9 +99,7 @@ export const LoginForm = () => {
         type='submit'
         disabled={isSubmitting || loadingUser}
         className={styles['login-form__button']}
-        loadingIcon={
-          <LuLoaderCircle className={styles['login-form__button-icon']} />
-        }
+        loadingIcon={<LuLoaderCircle />}
       >
         Cotiza aquí
       </Button>

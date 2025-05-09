@@ -1,8 +1,7 @@
 import { Footer } from '../../layout/Footer'
-import { BackgroundBlurs } from './components/BackgroundBlurs'
-import { LoginForm } from './components/LoginForm'
 import styles from './LoginPage.module.css'
 import cover from './assets/cover-login.png'
+import { BackgroundBlurs, LoginForm } from './components'
 
 export const LoginPage = () => {
   return (

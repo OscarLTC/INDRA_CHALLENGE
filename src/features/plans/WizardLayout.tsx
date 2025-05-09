@@ -1,8 +1,8 @@
 import { Button } from 'primereact/button'
 import { Outlet, useLocation, useNavigate } from 'react-router'
-import { StepIndicator } from './components/StepIndicator'
 import { LuCircleChevronLeft } from 'react-icons/lu'
 import styles from './WizardLayout.module.css'
+import { StepIndicator } from '../../shared/components'
 
 const STEPS = ['Planes y coberturas', 'Resumen']
 

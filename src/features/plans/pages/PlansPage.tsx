@@ -11,13 +11,16 @@ export const PlansPage = () => {
   const { summary } = useLoginStore()
   const navigate = useNavigate()
 
-  const { plans, selectedType, selectType } = usePlans()
+  const { plans, selectedType, selectType, selectPlan } = usePlans()
 
   const onPlanSelection = (planType: PlanType) => {
     selectType(planType)
   }
 
-  const onGoBack = () => navigate(-1)
+  const onGoBack = () => {
+    selectPlan(null)
+    navigate(-1)
+  }
 
   return (
     <div className={styles['plans-page']}>
@@ -44,7 +47,7 @@ export const PlansPage = () => {
           />
         ))}
       </section>
-      {selectedType && <PlanList plans={plans} />}
+      {selectedType && <PlanList plans={plans} selectPlan={selectPlan} />}
     </div>
   )
 }

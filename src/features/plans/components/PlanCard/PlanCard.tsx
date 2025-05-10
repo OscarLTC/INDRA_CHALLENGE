@@ -6,10 +6,10 @@ import styles from './PlanCard.module.css'
 
 interface Props {
   plan: Plan
-  onSelect?: () => void
+  onSelect: (plan: Plan) => void
 }
 
-export const PlanCard = ({ plan }: Props) => {
+export const PlanCard = ({ plan, onSelect }: Props) => {
   const isClinic = plan.name.includes('Clínica')
   const recommended = isClinic || Boolean(plan.recommended)
   const iconSrc = isClinic ? planHospital : planHouse
@@ -57,7 +57,11 @@ export const PlanCard = ({ plan }: Props) => {
           </li>
         ))}
       </ul>
-      <Button unstyled className={styles['plan-card__button']}>
+      <Button
+        unstyled
+        className={styles['plan-card__button']}
+        onClick={() => onSelect(plan)}
+      >
         <span className={styles['plan-card__button-text']}>
           Seleccionar Plan
         </span>

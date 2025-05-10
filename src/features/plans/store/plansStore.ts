@@ -16,7 +16,7 @@ interface PlansState {
 
   fetchAllPlans: () => Promise<void>
   setType: (type: PlanType) => void
-  selectPlan: (plan: Plan) => void
+  selectPlan: (plan: Plan | null) => void
 }
 
 export const usePlansStore = create<PlansState>((set, get) => ({
@@ -28,6 +28,7 @@ export const usePlansStore = create<PlansState>((set, get) => ({
   error: null,
 
   fetchAllPlans: async () => {
+    if (get().allPlans.length > 0) return
     const summary = useLoginStore.getState().summary
     if (!summary) return
     set({ loading: true, error: null })

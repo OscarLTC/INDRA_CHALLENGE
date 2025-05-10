@@ -10,5 +10,5 @@
 }
 
 .backButton {
-  @apply outline-none ring-0 flex justify-start sm:hidden items-center;
+  @apply outline-none ring-0 flex justify-start sm:hidden items-center w-5;
 }

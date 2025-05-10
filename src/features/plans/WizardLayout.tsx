@@ -12,7 +12,9 @@ export const WizardLayout = () => {
 
   const currentStep = pathname.endsWith('/summary') ? 2 : 1
 
-  const goBack = () => navigate(-1)
+  const onGoBack = () => {
+    navigate(-1)
+  }
 
   return (
     <div className={styles['container']}>
@@ -20,7 +22,7 @@ export const WizardLayout = () => {
         <Button
           unstyled
           icon={<LuCircleChevronLeft />}
-          onClick={goBack}
+          onClick={onGoBack}
           className={styles['backButton']}
         />
         <StepIndicator steps={STEPS} current={currentStep} />

@@ -19,17 +19,18 @@ export const usePlans = () => {
 
   useEffect(() => {
     if (summary) fetchAllPlans()
-
-    return () => {
-      setType(null)
-    }
-  }, [fetchAllPlans, setType, summary])
+  }, [fetchAllPlans, summary])
 
   useEffect(() => {
     if (selectedPlan) {
-      navigate('/plans/summary', { state: { plan: selectedPlan } })
+      navigate('/plans/summary')
     }
-  }, [navigate, selectedPlan])
+
+    return () => {
+      setType(null)
+      selectPlan(null)
+    }
+  }, [navigate, setType, selectedPlan, selectPlan])
 
   return {
     plans,

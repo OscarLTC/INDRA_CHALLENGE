@@ -2,57 +2,76 @@ import { Button } from 'primereact/button'
 import { usePlans } from '../hooks/usePlans'
 import { FaUserGroup } from 'react-icons/fa6'
 import { useNavigate } from 'react-router'
+import { LuCircleArrowLeft } from 'react-icons/lu'
+import styles from './SummaryPage.module.css'
 
 export const SummaryPage = () => {
-  const { summary, selectedPlan, selectPlan } = usePlans()
   const navigate = useNavigate()
+  const { summary, selectedPlan, selectPlan } = usePlans()
+
+  const onGoBack = () => {
+    navigate(-1)
+    selectPlan(null)
+  }
 
   return (
-    <div className='h-full w-full flex justify-center items-center'>
-      <div className=' flex flex-col min-w-4xl justify-center'>
-        <h1 className='text-4xl font-bold leading-12'>Resumen del seguro</h1>
-        <div className='flex flex-col gap-4 px-8 py-6 bg-white shadow-md shadow-[#AEACF340] rounded-3xl mt-8'>
-          <div className='flex flex-col gap-2 border-b border-[#D7DBF5] pb-4'>
-            <p className='uppercase text-xs font-black'>
+    <article className={styles['summary-page']}>
+      <Button
+        onClick={onGoBack}
+        className={styles['summary-page__back-button']}
+      >
+        <LuCircleArrowLeft
+          className={styles['summary-page__back-button-icon']}
+        />
+        <span className={styles['summary-page__back-button-text']}>Volver</span>
+      </Button>
+      <div className={styles['summary-page__content']}>
+        <h1 className={styles['summary-page__title']}>Resumen del seguro</h1>
+
+        <div className={styles['summary-page__card']}>
+          {/* Header de la tarjeta */}
+          <div className={styles['summary-page__card-header']}>
+            <p className={styles['summary-page__card-header-label']}>
               Precios Calculados Para:
             </p>
-            <div className='flex items-center gap-3'>
+            <div className={styles['summary-page__user-info']}>
               <FaUserGroup className='w-6 h-6' />
-              <span className='text-xl font-bold'>{`${summary?.name} ${summary?.lastName}`}</span>
+              <span className={styles['summary-page__user-name']}>
+                {summary?.name} {summary?.lastName}
+              </span>
             </div>
           </div>
-          <div className='flex flex-col gap-1 text-[#141938]'>
-            <p className=' font-bold text-[#4B4B4D]'>Responsable de pago</p>
-            <div className='text-sm text-[#141938] leading-6 flex gap-1'>
-              <span>DNI:</span>
-              <span>{summary?.docNumber}</span>
+
+          {/* Sección: Responsable de pago */}
+          <div className={styles['summary-page__section']}>
+            <p className={styles['summary-page__section-title']}>
+              Responsable de pago
+            </p>
+            <div className={styles['summary-page__info']}>
+              <dt>DNI:</dt>
+              <dd>{summary?.docNumber}</dd>
             </div>
-            <div className='text-sm text-[#141938] leading-6 flex gap-1'>
-              <span>Celular:</span>
-              <span>{summary?.phone}</span>
+            <div className={styles['summary-page__info']}>
+              <dt>Celular:</dt>
+              <dd>{summary?.phone}</dd>
             </div>
-            <div></div>
           </div>
-          <div className='flex flex-col gap-1 text-[#141938]'>
-            <p className=' font-bold text-[#4B4B4D]'>Plan elegido</p>
-            <div className='text-sm text-[#141938] leading-6 flex gap-1'>
-              <span>{selectedPlan?.name}</span>
+
+          {/* Sección: Plan elegido */}
+          <div className={styles['summary-page__section']}>
+            <p className={styles['summary-page__section-title']}>
+              Plan elegido
+            </p>
+            <div className={styles['summary-page__info']}>
+              <dd>{selectedPlan?.name}</dd>
             </div>
-            <div className='text-sm text-[#141938] leading-6 flex gap-1'>
-              <span>Costo del Plan:</span>
-              <span>${selectedPlan?.price} al mes</span>
+            <div className={styles['summary-page__info']}>
+              <dt>Costo del plan:</dt>
+              <dd>${selectedPlan?.price} al mes</dd>
             </div>
-            <div></div>
           </div>
         </div>
       </div>
-      <Button
-        label='back'
-        onClick={() => {
-          selectPlan(null)
-          navigate(-1)
-        }}
-      />
-    </div>
+    </article>
   )
 }

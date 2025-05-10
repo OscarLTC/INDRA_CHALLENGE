@@ -1,15 +1,16 @@
 import { useLoginStore } from '../../login/store/loginStore'
 import { LuCircleArrowLeft } from 'react-icons/lu'
 import { Button } from 'primereact/button'
-import { useNavigate } from 'react-router'
 import styles from './PlansPage.module.css'
 import { PlanList, PlanOption, type PlanType } from '../components'
 import { OPTIONS } from '../../../shared/constants/options'
 import { usePlans } from '../hooks/usePlans'
+import type { Plan } from '../types/plan'
+import { useNavigate } from 'react-router'
 
 export const PlansPage = () => {
-  const { summary } = useLoginStore()
   const navigate = useNavigate()
+  const { summary } = useLoginStore()
 
   const { plans, selectedType, selectType, selectPlan } = usePlans()
 
@@ -19,6 +20,11 @@ export const PlansPage = () => {
 
   const onGoBack = () => {
     navigate(-1)
+  }
+
+  const onSelectPlan = (plan: Plan) => {
+    selectPlan(plan)
+    navigate('/plans/summary')
   }
 
   return (
@@ -46,7 +52,7 @@ export const PlansPage = () => {
           />
         ))}
       </section>
-      {selectedType && <PlanList plans={plans} selectPlan={selectPlan} />}
+      {selectedType && <PlanList plans={plans} selectPlan={onSelectPlan} />}
     </div>
   )
 }

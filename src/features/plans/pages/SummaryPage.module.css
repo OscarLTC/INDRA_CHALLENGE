@@ -1,0 +1,65 @@
+@reference "tailwindcss";
+
+.summary-page {
+  @apply h-full w-full flex justify-center items-start sm:items-center relative;
+}
+
+.summary-page__back-button {
+  @apply text-[#4F4FFF] absolute top-15 left-40 sm:flex gap-2 items-center rounded-full px-2 hover:bg-[#4F4FFF12] hidden;
+}
+
+.summary-page__back-button-icon {
+  @apply w-5 h-5;
+}
+
+.summary-page__back-button-text {
+  @apply text-lg font-bold;
+}
+
+.summary-page__content {
+  @apply flex flex-col md:min-w-4xl justify-center;
+}
+
+.summary-page__title {
+  @apply text-3xl sm:text-4xl font-bold leading-12 mt-4 sm:mt-0 px-8 sm:px-0;
+}
+
+.summary-page__card {
+  @apply flex flex-col gap-4 px-8 py-6 bg-white shadow-md shadow-[#AEACF340] rounded-3xl mt-8;
+}
+
+.summary-page__card-header {
+  @apply flex flex-col gap-2 border-b border-[#D7DBF5] pb-4;
+}
+
+.summary-page__card-header-label {
+  @apply uppercase text-xs font-black;
+}
+
+.summary-page__user-info {
+  @apply flex items-center gap-3;
+}
+
+.summary-page__user-name {
+  @apply text-xl font-bold;
+}
+
+.summary-page__section {
+  @apply flex flex-col gap-1 text-[#141938];
+}
+
+.summary-page__section-title {
+  @apply font-bold text-[#4B4B4D];
+}
+
+.summary-page__info {
+  @apply text-sm text-[#141938] leading-6 flex gap-1;
+}
+
+.summary-page__info dt {
+  @apply font-semibold;
+}
+
+.summary-page__info dd {
+  @apply ml-1;
+}

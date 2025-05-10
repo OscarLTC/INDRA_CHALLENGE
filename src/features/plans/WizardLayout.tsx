@@ -1,5 +1,5 @@
 import { Button } from 'primereact/button'
-import { Outlet } from 'react-router'
+import { Outlet, useNavigate } from 'react-router'
 import { LuCircleChevronLeft } from 'react-icons/lu'
 import styles from './WizardLayout.module.css'
 import { StepIndicator } from '../../shared/components'
@@ -8,13 +8,14 @@ import { usePlans } from './hooks/usePlans'
 const STEPS = ['Planes y coberturas', 'Resumen']
 
 export const WizardLayout = () => {
-  const { location, navigate, selectPlan } = usePlans()
+  const navigate = useNavigate()
+  const { selectPlan } = usePlans()
 
   const currentStep = location.pathname.endsWith('/summary') ? 2 : 1
 
   const onGoBack = () => {
-    selectPlan(null)
     navigate(-1)
+    selectPlan(null)
   }
 
   return (

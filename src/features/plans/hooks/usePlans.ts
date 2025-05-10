@@ -1,10 +1,11 @@
 import { useEffect } from 'react'
 import { usePlansStore } from '../store/plansStore'
-import { useNavigate } from 'react-router'
+import { useLocation, useNavigate } from 'react-router'
 import { useLoginStore } from '../../login/store/loginStore'
 
 export const usePlans = () => {
   const navigate = useNavigate()
+  const location = useLocation()
   const summary = useLoginStore((s) => s.summary)
   const {
     plans,
@@ -22,22 +23,25 @@ export const usePlans = () => {
   }, [fetchAllPlans, summary])
 
   useEffect(() => {
-    if (selectedPlan) {
+    if (selectedPlan && location.pathname !== '/plans/summary') {
       navigate('/plans/summary')
     }
 
     return () => {
       setType(null)
-      selectPlan(null)
     }
-  }, [navigate, setType, selectedPlan, selectPlan])
+  }, [location.pathname, navigate, selectedPlan, setType])
 
   return {
     plans,
     loading,
+    location,
+    navigate,
     error,
     selectedType,
+    summary,
     selectType: setType,
     selectPlan,
+    selectedPlan,
   }
 }

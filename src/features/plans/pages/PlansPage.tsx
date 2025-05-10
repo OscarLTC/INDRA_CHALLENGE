@@ -18,7 +18,6 @@ export const PlansPage = () => {
   }
 
   const onGoBack = () => {
-    selectPlan(null)
     navigate(-1)
   }
 

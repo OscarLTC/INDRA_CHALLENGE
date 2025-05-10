@@ -1,10 +1,10 @@
 import { InputText } from 'primereact/inputtext'
 import { Button } from 'primereact/button'
 import styles from './LoginForm.module.css'
-import { useLogin } from '../hooks/useLogin'
 import { Controller } from 'react-hook-form'
 import { LuLoaderCircle } from 'react-icons/lu'
-import { CustomCheckBox, DocumentField } from '../../../shared/components'
+import { useLogin } from '../../hooks/useLogin'
+import { CustomCheckBox, DocumentField } from '../../../../shared/components'
 
 export const LoginForm = () => {
   const { control, register, handleSubmit, errors, isSubmitting, loadingUser } =

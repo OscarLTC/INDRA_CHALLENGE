@@ -56,10 +56,5 @@
   @apply text-sm text-[#141938] leading-6 flex gap-1;
 }
 
-.summary-page__info dt {
-  @apply font-semibold;
-}
 
-.summary-page__info dd {
-  @apply ml-1;
-}
+

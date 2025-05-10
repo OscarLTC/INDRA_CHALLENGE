@@ -29,7 +29,6 @@ export const SummaryPage = () => {
         <h1 className={styles['summary-page__title']}>Resumen del seguro</h1>
 
         <div className={styles['summary-page__card']}>
-          {/* Header de la tarjeta */}
           <div className={styles['summary-page__card-header']}>
             <p className={styles['summary-page__card-header-label']}>
               Precios Calculados Para:
@@ -42,7 +41,6 @@ export const SummaryPage = () => {
             </div>
           </div>
 
-          {/* Sección: Responsable de pago */}
           <div className={styles['summary-page__section']}>
             <p className={styles['summary-page__section-title']}>
               Responsable de pago
@@ -57,7 +55,6 @@ export const SummaryPage = () => {
             </div>
           </div>
 
-          {/* Sección: Plan elegido */}
           <div className={styles['summary-page__section']}>
             <p className={styles['summary-page__section-title']}>
               Plan elegido

@@ -1,7 +1,7 @@
 @reference "tailwindcss";
 
 .login-page {
-  @apply flex flex-col w-screen h-screen relative;
+  @apply flex flex-col w-screen h-[100dvh] sm:h-screen relative;
 }
 
 .login-page__container {

@@ -1,3 +1,5 @@
+@reference "tailwindcss";
+
 .layout {
-  @apply w-screen h-screen flex flex-col bg-[#F8F9FF] overflow-x-hidden;
+  @apply w-screen h-[100dvh] sm:h-screen flex flex-col bg-[#F8F9FF] overflow-x-hidden;
 }

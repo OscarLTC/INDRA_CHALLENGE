@@ -13,13 +13,13 @@
 }
 
 .plan-carousel__slides{
-  @apply flex space-x-10 snap-x touch-pan-x snap-mandatory scroll-smooth overflow-x-auto  py-8 px-19;
+  @apply flex space-x-10 snap-x touch-pan-x snap-mandatory scroll-smooth overflow-x-auto  py-8 px-13;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
 
 .plan-carousel__controls{
-  @apply flex justify-center items-center gap-4 pb-10
+  @apply flex justify-center items-center gap-4 pb-16
 }
 
 .plan-carousel__button{

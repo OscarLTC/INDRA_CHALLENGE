@@ -1,4 +1,4 @@
-import { InputText } from 'primereact/inputtext'
+import { InputMask } from 'primereact/inputmask'
 import { Button } from 'primereact/button'
 import styles from './LoginForm.module.css'
 import { useLogin } from '../../hooks/useLogin'
@@ -46,8 +46,9 @@ export const LoginForm = () => {
           name='phone'
           render={({ field: { value: phone, onChange } }) => (
             <div className={styles['login-controller']}>
-              <InputText
+              <InputMask
                 {...register('phone')}
+                mask='999999999'
                 value={phone}
                 onChange={(e) => onChange(e.target.value)}
                 placeholder='Celular'

@@ -27,7 +27,9 @@ export const DocumentField = ({
       />
       <InputText
         value={number}
-        onChange={(e) => onNumberChange(e.target.value)}
+        onChange={(e) =>
+          onNumberChange(e.target.value.toUpperCase().replace(/[^A-Z0-9]/g, ''))
+        }
         placeholder='N° de documento'
         className={styles['document-field__input']}
       />

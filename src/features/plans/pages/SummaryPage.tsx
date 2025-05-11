@@ -4,6 +4,7 @@ import { FaUserGroup } from 'react-icons/fa6'
 import { useNavigate } from 'react-router'
 import { LuCircleArrowLeft } from 'react-icons/lu'
 import styles from './SummaryPage.module.css'
+import { useEffect } from 'react'
 
 export const SummaryPage = () => {
   const navigate = useNavigate()
@@ -13,6 +14,12 @@ export const SummaryPage = () => {
     navigate(-1)
     selectPlan(null)
   }
+
+  useEffect(() => {
+    if (!selectedPlan) {
+      navigate('/plans', { replace: true })
+    }
+  }, [selectedPlan, navigate])
 
   return (
     <article className={styles['summary-page']}>

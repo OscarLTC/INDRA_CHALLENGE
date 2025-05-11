@@ -3,7 +3,7 @@ import { usePlansStore } from '../store/plansStore'
 import { useLoginStore } from '../../login/store/loginStore'
 
 export const usePlans = () => {
-  const summary = useLoginStore((s) => s.summary)
+  const { summary } = useLoginStore()
 
   const {
     plans,

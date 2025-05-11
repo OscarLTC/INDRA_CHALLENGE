@@ -1,9 +1,18 @@
+import { useEffect } from 'react'
 import { Footer } from '../../layout/Footer'
 import styles from './LoginPage.module.css'
 import cover from './assets/cover-login.png'
 import { BackgroundBlurs, LoginForm } from './components'
+import { useLoginStore } from './store/loginStore'
 
 export const LoginPage = () => {
+  const { setSummary } = useLoginStore()
+
+  useEffect(() => {
+    setSummary(null)
+    localStorage.removeItem('login-summary')
+  }, [setSummary])
+
   return (
     <div className={styles['login-page']}>
       <div className={styles['login-page__container']}>

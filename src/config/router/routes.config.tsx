@@ -4,6 +4,7 @@ import { LoginPage } from '../../features/login'
 import { PlansPage } from '../../features/plans/pages/PlansPage'
 import { WizardLayout } from '../../layout/WizardLayout'
 import { SummaryPage } from '../../features/plans/pages/SummaryPage'
+import { RequireAuth } from '../../shared/components'
 
 export const routes: RouteObject[] = [
   {
@@ -16,7 +17,11 @@ export const routes: RouteObject[] = [
       },
       {
         path: 'plans',
-        element: <WizardLayout />,
+        element: (
+          <RequireAuth>
+            <WizardLayout />
+          </RequireAuth>
+        ),
         children: [
           {
             index: true,

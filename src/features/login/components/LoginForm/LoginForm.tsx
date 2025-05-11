@@ -50,7 +50,7 @@ export const LoginForm = () => {
                 {...register('phone')}
                 value={phone}
                 onChange={(e) => onChange(e.target.value)}
-                placeholder='Teléfono'
+                placeholder='Celular'
                 className={styles['login-form__input']}
               />
               {errors.phone && (

@@ -1,54 +1,68 @@
-# React + TypeScript + Vite
+# Frontend Challenge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Desafío técnico de Indra
 
-Currently, two official plugins are available:
+## Tecnologías y bibliotecas utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* **React & Vite**: desarrollo ágil con Hot Module Replacement.
+* **TypeScript**: tipado estático y detección temprana de errores.
+* **Zustand**: estado global ligero para login y planes.
+* **React Router v7**: navegación declarativa y protección de rutas.
+* **React Hook Form + Zod**: validación de formularios basada en esquemas.
+* **PrimeReact**: componentes accesibles (Dropdown, InputMask, Button, ProgressBar, Checkbox).
+* **Tailwind CSS**: utilidades de estilo para rapidez y coherencia.
+* **Vitest + Testing Library + JSDOM**: pruebas unitarias de utilitarios, hooks y componentes.
 
-## Expanding the ESLint configuration
+## Estructura del proyecto
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```
+src/
+├── api/          # servicios API (fetchPlans, fetchUser)
+├── shared/       # componentes reutilizables (DocumentField, CustomCheckBox, StepIndicator, RequireAuth)
+├── features/     # lógica de dominio: login y planes
+│   ├── login/    # formulario, store persistente y validaciones Zod
+│   └── plans/    # fetch, filtrado, carousel y resumen de planes
+├── layout/       # layouts globales (Header, Footer, WizardLayout)
+├── config/       # rutas y configuración de PrimeReact
+└── hooks/        # hooks genéricos (useCarousel, usePlans)
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Cómo levantar el proyecto
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. Clonar el repositorio:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+   ```bash
+   git clone <URL_DEL_REPO>
+   cd frontend-challenge
+   ```
+2. Instalar dependencias:
+
+   ```bash
+   npm install
+   ```
+3. Configurar variable de entorno:
+
+   * Crear archivo `.env` con:
+
+     ```env
+     VITE_API_URL=https://.../api
+     ```
+4. Levantar servidor de desarrollo:
+
+   ```bash
+   npm run dev
+   ```
+
+## Testing
+
+* Ejecutar todas las pruebas unitarias:
+
+  ```bash
+  npm run test
+  ```
+* Incluye tests de:
+
+  * Utilitarios (`applyDiscount`, `computeUserAge`)
+  * Hooks (`useCarousel`)
+  * Componentes (`DocumentField`, `RequireAuth`, `StepIndicator`)
+

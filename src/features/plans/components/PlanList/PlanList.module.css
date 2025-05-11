@@ -1,5 +1,35 @@
 @reference "tailwindcss";
 
 .plan-list {
-  @apply grid sm:grid-cols-3 max-w-4xl pb-10 justify-center mx-auto gap-8 mt-10 bg-[#F8F9FF];
+  @apply hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 max-w-4xl pb-10 justify-center mx-auto gap-8 mt-10 bg-[#F8F9FF];
+}
+
+.plan-carousel {
+  @apply sm:hidden;
+}
+
+.plan-carousel__container{
+  @apply relative overflow-hidden;
+}
+
+.plan-carousel__slides{
+  @apply flex space-x-10 snap-x touch-pan-x snap-mandatory scroll-smooth overflow-x-auto  py-8 px-19;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.plan-carousel__controls{
+  @apply flex justify-center items-center gap-4 pb-10
+}
+
+.plan-carousel__button{
+  @apply w-8 h-8 rounded-full border border-[#4F4FFF]  flex items-center justify-center text-gray-500  outline-none ring-0 
+}
+
+.plan-carousel__button--icon{
+  @apply w-5 h-5 text-[#4F4FFF]
+}
+
+.plan-carousel__pagination{
+  @apply text-sm text-[#141938]
 }

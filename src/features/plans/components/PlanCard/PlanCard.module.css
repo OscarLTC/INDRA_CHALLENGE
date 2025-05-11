@@ -1,7 +1,7 @@
 @reference "tailwindcss";
 
 .plan-card {
-  @apply px-8 py-10 h-full max-w-2xs sm:max-w-none gap-6 bg-white rounded-3xl shadow-2xl shadow-[#AEACF3]/100 backdrop-blur-2xl flex flex-col;
+  @apply flex-shrink-0 flex flex-col max-w-xs gap-6 bg-white rounded-3xl  shadow-lg sm:shadow-2xl shadow-[#AEACF3]/100  py-10 px-8 w-full  snap-center
 }
 
 .plan-card__header {
@@ -21,7 +21,7 @@
 }
 
 .plan-card__info {
-  @apply flex gap-4 text-[#141938] pb-6 border-b border-[#D7DBF5];
+  @apply flex justify-between gap-4 text-[#141938] pb-6 border-b border-[#D7DBF5];
 }
 
 .plan-card__details {

@@ -17,7 +17,7 @@
 }
 
 .summary-page__content {
-  @apply flex flex-col md:min-w-4xl justify-center;
+  @apply flex flex-col lg:min-w-4xl justify-center;
 }
 
 .summary-page__title {
@@ -38,6 +38,10 @@
 
 .summary-page__user-info {
   @apply flex items-center gap-3;
+}
+
+.summary-page__user-info-icon {
+  @apply w-6 h-6;
 }
 
 .summary-page__user-name {

@@ -23,7 +23,7 @@ export const LoginForm = () => {
               render={({
                 field: { value: docNumber, onChange: onNumberChange },
               }) => (
-                <div className='flex flex-col'>
+                <div className={styles['login-controller']}>
                   <DocumentField
                     type={docType}
                     number={docNumber}
@@ -45,7 +45,7 @@ export const LoginForm = () => {
           control={control}
           name='phone'
           render={({ field: { value: phone, onChange } }) => (
-            <div className='flex flex-col'>
+            <div className={styles['login-controller']}>
               <InputText
                 {...register('phone')}
                 value={phone}

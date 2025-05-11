@@ -34,7 +34,7 @@ export const SummaryPage = () => {
               Precios Calculados Para:
             </p>
             <div className={styles['summary-page__user-info']}>
-              <FaUserGroup className='w-6 h-6' />
+              <FaUserGroup className={styles['summary-page__user-info-icon']} />
               <span className={styles['summary-page__user-name']}>
                 {summary?.name} {summary?.lastName}
               </span>
